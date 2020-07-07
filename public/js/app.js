@@ -20,9 +20,9 @@ weatherFrom.addEventListener ('submit' ,(e) => {
     
 //fetch ('/weather?address='+location+'').then((response) => { - Para o mesmo servidor não precisa de endereço, so do caminho 
     fetch ('/weather?address='+location+'').then((response) => {
-    response.json().then (({error, forecast, location, temperature}) => {
+    response.json().then (({error, forecast, location, temperature,humidity}) => {
         if (error) return messageOne.textContent=error
-        messageOne.textContent= forecast +' - '+location
+        messageOne.textContent= forecast +' - '+location + '- humidity: '+humidity
         messageTwo.textContent=''+temperature+'ºC';  
         })
     })
